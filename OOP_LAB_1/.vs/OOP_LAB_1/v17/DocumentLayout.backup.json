@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_1\\",
+  "WorkspaceRootPath": "C:\\Users\\Ana\\Desktop\\OOP_REPO\\OOP_LAB_1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{80CB8BB7-B9CB-4925-AD30-9C6B2B709F56}|OOP_LAB_1.vcxproj|C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_1\\OOP_LAB_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{80CB8BB7-B9CB-4925-AD30-9C6B2B709F56}|OOP_LAB_1.vcxproj|C:\\Users\\Ana\\Desktop\\OOP_REPO\\OOP_LAB_1\\OOP_LAB_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{80CB8BB7-B9CB-4925-AD30-9C6B2B709F56}|OOP_LAB_1.vcxproj|solutionrelative:OOP_LAB_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80CB8BB7-B9CB-4925-AD30-9C6B2B709F56}|OOP_LAB_1.vcxproj|C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_1\\header1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{80CB8BB7-B9CB-4925-AD30-9C6B2B709F56}|OOP_LAB_1.vcxproj|C:\\Users\\Ana\\Desktop\\OOP_REPO\\OOP_LAB_1\\header1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{80CB8BB7-B9CB-4925-AD30-9C6B2B709F56}|OOP_LAB_1.vcxproj|solutionrelative:header1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80CB8BB7-B9CB-4925-AD30-9C6B2B709F56}|OOP_LAB_1.vcxproj|C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_1\\header2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{80CB8BB7-B9CB-4925-AD30-9C6B2B709F56}|OOP_LAB_1.vcxproj|C:\\Users\\Ana\\Desktop\\OOP_REPO\\OOP_LAB_1\\header2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{80CB8BB7-B9CB-4925-AD30-9C6B2B709F56}|OOP_LAB_1.vcxproj|solutionrelative:header2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80CB8BB7-B9CB-4925-AD30-9C6B2B709F56}|OOP_LAB_1.vcxproj|C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_1\\hw_library.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{80CB8BB7-B9CB-4925-AD30-9C6B2B709F56}|OOP_LAB_1.vcxproj|C:\\Users\\Ana\\Desktop\\OOP_REPO\\OOP_LAB_1\\hw_library.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{80CB8BB7-B9CB-4925-AD30-9C6B2B709F56}|OOP_LAB_1.vcxproj|solutionrelative:hw_library.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -44,50 +44,47 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "hw_library.h",
-              "DocumentMoniker": "C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_1\\hw_library.h",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\OOP_REPO\\OOP_LAB_1\\hw_library.h",
               "RelativeDocumentMoniker": "hw_library.h",
-              "ToolTip": "C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_1\\hw_library.h",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\OOP_REPO\\OOP_LAB_1\\hw_library.h",
               "RelativeToolTip": "hw_library.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-26T15:41:19.419Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-26T15:41:19.419Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "header2.h",
-              "DocumentMoniker": "C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_1\\header2.h",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\OOP_REPO\\OOP_LAB_1\\header2.h",
               "RelativeDocumentMoniker": "header2.h",
-              "ToolTip": "C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_1\\header2.h",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\OOP_REPO\\OOP_LAB_1\\header2.h",
               "RelativeToolTip": "header2.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-26T15:40:49.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-26T15:40:49.228Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "header1.h",
-              "DocumentMoniker": "C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_1\\header1.h",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\OOP_REPO\\OOP_LAB_1\\header1.h",
               "RelativeDocumentMoniker": "header1.h",
-              "ToolTip": "C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_1\\header1.h",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\OOP_REPO\\OOP_LAB_1\\header1.h",
               "RelativeToolTip": "header1.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-26T15:40:29.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-26T15:40:29.754Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "OOP_LAB_1.cpp",
-              "DocumentMoniker": "C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_1\\OOP_LAB_1.cpp",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\OOP_REPO\\OOP_LAB_1\\OOP_LAB_1.cpp",
               "RelativeDocumentMoniker": "OOP_LAB_1.cpp",
-              "ToolTip": "C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_1\\OOP_LAB_1.cpp",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\OOP_REPO\\OOP_LAB_1\\OOP_LAB_1.cpp",
               "RelativeToolTip": "OOP_LAB_1.cpp",
-              "ViewState": "AgIAAFUAAAAAAAAAAADwv2AAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-26T15:35:38.637Z",
               "EditorCaption": ""
