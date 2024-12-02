@@ -1,0 +1,12 @@
+﻿  OOP_LAB_8_3.cpp
+C:\Users\Andrei Necsulea\Desktop\OOP_LAB_8_3\OOP_LAB_8_3.cpp(28,24): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+      C:\Users\Andrei Necsulea\Desktop\OOP_LAB_8_3\OOP_LAB_8_3.cpp(28,24):
+      the template instantiation context (the oldest one first) is
+          C:\Users\Andrei Necsulea\Desktop\OOP_LAB_8_3\OOP_LAB_8_3.cpp(104,26):
+          see reference to class template instantiation 'ListManager<Element>' being compiled
+          C:\Users\Andrei Necsulea\Desktop\OOP_LAB_8_3\OOP_LAB_8_3.cpp(23,9):
+          while compiling class template member function 'int ListManager<Element>::findElementByKey(const Element::KeyType &)'
+              C:\Users\Andrei Necsulea\Desktop\OOP_LAB_8_3\OOP_LAB_8_3.cpp(117,15):
+              see the first reference to 'ListManager<Element>::findElementByKey' in 'main'
+  
+  OOP_LAB_8_3.vcxproj -> C:\Users\Andrei Necsulea\Desktop\OOP_LAB_8_3\x64\Debug\OOP_LAB_8_3.exe

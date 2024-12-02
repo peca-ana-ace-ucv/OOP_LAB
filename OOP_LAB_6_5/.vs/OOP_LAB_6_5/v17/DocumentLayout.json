@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_6_5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B14DB0EF-09E3-4BE6-85FD-AAD962937C20}|OOP_LAB_6_5.vcxproj|C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_6_5\\OOP_LAB_6_5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B14DB0EF-09E3-4BE6-85FD-AAD962937C20}|OOP_LAB_6_5.vcxproj|solutionrelative:OOP_LAB_6_5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OOP_LAB_6_5.cpp",
+              "DocumentMoniker": "C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_6_5\\OOP_LAB_6_5.cpp",
+              "RelativeDocumentMoniker": "OOP_LAB_6_5.cpp",
+              "ToolTip": "C:\\Users\\Andrei Necsulea\\Desktop\\OOP_LAB_6_5\\OOP_LAB_6_5.cpp",
+              "RelativeToolTip": "OOP_LAB_6_5.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-02T10:50:22.849Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
