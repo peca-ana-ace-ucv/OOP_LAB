@@ -4,8 +4,7 @@
 
 using namespace std;
 
-// Class for Driver
-class Driver 
+class Driver
 {
 private:
     string name;
@@ -13,21 +12,31 @@ private:
 
 public:
     // Constructor
-    Driver(string name, int driverID) : name(name), driverID(driverID) {}
+    Driver(string name, int driverID)
+    {
+        this->name = name;
+        this->driverID = driverID;
+    }
 
     // Get Driver Info
-    string getName() { return name; }
-    int getDriverID() { return driverID; }
+    string getName()
+    {
+        return name;
+    }
+
+    int getDriverID()
+    {
+        return driverID;
+    }
 
     // Display Driver Info
-    void display() 
+    void display()
     {
         cout << "Driver Name: " << name << ", Driver ID: " << driverID;
     }
 };
 
-// Class for Car
-class Car 
+class Car
 {
 private:
     string carModel;
@@ -36,24 +45,33 @@ private:
 public:
     // Constructor
     Car(string carModel, string licensePlate)
-        : carModel(carModel), licensePlate(licensePlate) {}
+    {
+        this->carModel = carModel;
+        this->licensePlate = licensePlate;
+    }
 
     // Get Car Info
-    string getCarModel() { return carModel; }
-    string getLicensePlate() { return licensePlate; }
+    string getCarModel()
+    {
+        return carModel;
+    }
+
+    string getLicensePlate()
+    {
+        return licensePlate;
+    }
 
     // Display Car Info
-    void display() 
+    void display()
     {
         cout << "Car Model: " << carModel << ", License Plate: " << licensePlate;
     }
 };
 
-// Class to Manage Driver-Car Pairs
-class DriverCarManager 
+class DriverCarManager
 {
 private:
-    struct DriverCarPair 
+    struct DriverCarPair
     {
         Driver driver;
         Car car;
@@ -65,17 +83,17 @@ private:
 
 public:
     // Add a Driver-Car Pair
-    void addPair(Driver driver, Car car) 
+    void addPair(Driver driver, Car car)
     {
         driverCarPairs.push_back(DriverCarPair(driver, car));
     }
 
     // Remove a Driver-Car Pair by Driver ID
-    void removePairByDriverID(int driverID) 
+    void removePairByDriverID(int driverID)
     {
-        for (auto it = driverCarPairs.begin(); it != driverCarPairs.end(); ++it) 
+        for (auto it = driverCarPairs.begin(); it != driverCarPairs.end(); ++it)
         {
-            if (it->driver.getDriverID() == driverID) 
+            if (it->driver.getDriverID() == driverID)
             {
                 driverCarPairs.erase(it);
                 cout << "Pair with Driver ID " << driverID << " removed successfully.\n";
@@ -86,16 +104,16 @@ public:
     }
 
     // Display All Driver-Car Pairs
-    void displayAll() 
+    void displayAll()
     {
-        if (driverCarPairs.empty()) 
+        if (driverCarPairs.empty())
         {
             cout << "No Driver-Car pairs available.\n";
             return;
         }
 
         cout << "Driver-Car Pairs:\n";
-        for (auto& pair : driverCarPairs) 
+        for (auto& pair : driverCarPairs)
         {
             pair.driver.display();
             cout << " | ";
@@ -106,7 +124,7 @@ public:
     }
 };
 
-int main() 
+int main()
 {
     DriverCarManager manager;
 

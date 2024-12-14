@@ -6,7 +6,7 @@
 using namespace std;
 
 // Base class Character
-class Character 
+class Character
 {
 protected:
     string name;
@@ -17,18 +17,17 @@ public:
     Character(string name, int health, bool isWarrior)
         : name(name), health(health), isWarrior(isWarrior) {}
 
-    virtual void display() const 
+    void display()
     {
         cout << name << " (" << (isWarrior ? "Warrior" : "Mage") << "): Health = " << health << endl;
     }
 
-    bool isAlive() const 
+    bool isAlive()
     {
         return health > 0;
     }
 
-    // Getter for isWarrior
-    bool isWarriorCharacter() const 
+    bool isWarriorCharacter()
     {
         return isWarrior;
     }
@@ -36,30 +35,28 @@ public:
     virtual void attack(Character* enemy) = 0;
     virtual void heal(Character* ally) = 0;
 
-    // Method to receive damage
-    void receiveDamage(int damage) 
+    void receiveDamage(int damage)
     {
         health -= damage;
         if (health < 0) health = 0;  // Prevent health from going negative
     }
 
-    string getName() const { return name; }
-    int getHealth() const { return health; }
+    string getName() { return name; }
+    int getHealth() { return health; }
 };
 
 // Warrior Class
-class Warrior : public Character 
+class Warrior : public Character
 {
 public:
     Warrior(string name, int health) : Character(name, health, true) {}
 
-    void attack(Character* enemy) override 
+    void attack(Character* enemy) override
     {
-        // Warriors can attack if enemy is weaker and within a random distance
         int attackPower = rand() % 20 + 5;  // Random attack power between 5 and 24
         int distance = rand() % 5 + 1;  // Random distance between 1 and 5
 
-        if (enemy->getHealth() < this->getHealth()) 
+        if (enemy->getHealth() < this->getHealth())
         {  // Warrior can attack weaker enemy
             cout << this->getName() << " attacks " << enemy->getName()
                 << " with power " << attackPower << " from distance " << distance << endl;
@@ -67,22 +64,20 @@ public:
         }
     }
 
-    void heal(Character* ally) override 
+    void heal(Character* ally) override
     {
-        // Warriors cannot heal, so just print a message
         cout << this->getName() << " cannot heal!" << endl;
     }
 };
 
 // Mage Class
-class Mage : public Character 
+class Mage : public Character
 {
 public:
     Mage(string name, int health) : Character(name, health, false) {}
 
-    void attack(Character* enemy) override 
+    void attack(Character* enemy) override
     {
-        // Mages can attack but don't have high power compared to warriors
         int attackPower = rand() % 10 + 1;  // Random attack power between 1 and 10
         int distance = rand() % 5 + 1;  // Random distance between 1 and 5
 
@@ -91,10 +86,9 @@ public:
         enemy->receiveDamage(attackPower);
     }
 
-    void heal(Character* ally) override 
+    void heal(Character* ally) override
     {
-        // Mages can heal warriors
-        if (ally->isWarriorCharacter()) 
+        if (ally->isWarriorCharacter())
         {
             int healPower = rand() % 15 + 5;  // Random heal power between 5 and 20
             cout << this->getName() << " heals " << ally->getName()
@@ -110,77 +104,98 @@ private:
     vector<Character*> characters;
 
 public:
-    void addCharacter(Character* character) 
+    void addCharacter(Character* character)
     {
         characters.push_back(character);
     }
 
-    // Remove dead characters from the list
-    void removeDeadCharacters() 
+    void removeDeadCharacters()
     {
-        for (auto it = characters.begin(); it != characters.end(); ) 
+        for (auto it = characters.begin(); it != characters.end(); )
         {
-            if (!(*it)->isAlive()) 
+            if (!(*it)->isAlive())
             {
                 cout << (*it)->getName() << " has been defeated!" << endl;
                 it = characters.erase(it);
             }
             else
-              ++it;
+                ++it;
         }
     }
 
-    void simulateFight() 
+    void simulateFight()
     {
-        for (size_t i = 0; i < characters.size() - 1; i++) 
+        for (size_t i = 0; i < characters.size() - 1; i++)
         {
-            if (characters[i]->isAlive()) 
+            if (characters[i]->isAlive())
             {
-                // Simulate attacking next character
+                // Simulate attacking the next character
                 characters[i]->attack(characters[i + 1]);
                 removeDeadCharacters();
             }
         }
-        // Display all characters information
+        // Display all characters' information
         cout << "\nCharacter Statuses after the fight:\n";
         for (auto& character : characters)
             character->display();
     }
 
-    // Heal warriors if a mage is close enough (healing simulation)
-    void simulateHealing() 
+    void simulateHealing()
     {
-        for (size_t i = 0; i < characters.size(); i++) 
+        for (size_t i = 0; i < characters.size(); i++)
         {
-            if (characters[i]->isAlive() && !characters[i]->isWarriorCharacter()) 
+            if (characters[i]->isAlive() && !characters[i]->isWarriorCharacter())
             {
-                for (size_t j = 0; j < characters.size(); j++) 
+                for (size_t j = 0; j < characters.size(); j++)
                 {
                     if (characters[i]->isAlive() && characters[j]->isWarriorCharacter() && characters[j]->getHealth() < 50)
                         characters[i]->heal(characters[j]);
-                   
                 }
             }
         }
     }
+
+    void displayTeamInfo()
+    {
+        for (auto& character : characters)
+            character->display();
+    }
 };
 
-int main() 
+int main()
 {
     srand(time(0));  // Seed for random number generation
 
-    // Create a team and add warriors and mages
+    // Create two teams and add warriors and mages
     Team team1;
     team1.addCharacter(new Warrior("Warrior 1", 100));
-    team1.addCharacter(new Warrior("Warrior 2", 100));
     team1.addCharacter(new Mage("Mage 1", 80));
-    team1.addCharacter(new Mage("Mage 2", 80));
+    team1.addCharacter(new Warrior("Warrior 2", 90));
+    team1.addCharacter(new Mage("Mage 2", 70));
 
-    // Simulate a fight session
+    Team team2;
+    team2.addCharacter(new Warrior("Warrior 3", 120));
+    team2.addCharacter(new Mage("Mage 3", 75));
+    team2.addCharacter(new Warrior("Warrior 4", 110));
+    team2.addCharacter(new Mage("Mage 4", 65));
+
+    // Simulate a fight session between the two teams
+    cout << "Team 1 Attack Session:\n";
     team1.simulateFight();
+    cout << "\nTeam 2 Attack Session:\n";
+    team2.simulateFight();
 
-    // Heal some warriors
+    // Heal some warriors if possible
+    cout << "\nHealing Warriors in Team 1:\n";
     team1.simulateHealing();
+    cout << "\nHealing Warriors in Team 2:\n";
+    team2.simulateHealing();
+
+    // Display teams' information after healing
+    cout << "\nTeam 1 after Healing:\n";
+    team1.displayTeamInfo();
+    cout << "\nTeam 2 after Healing:\n";
+    team2.displayTeamInfo();
 
     return 0;
 }

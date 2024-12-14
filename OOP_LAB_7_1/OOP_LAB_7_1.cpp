@@ -4,11 +4,11 @@
 
 using namespace std;
 
-class Group 
+class Group
 {
 public:
     // Nested Student class
-    class Student 
+    class Student
     {
     private:
         string name;
@@ -16,10 +16,14 @@ public:
 
     public:
         // Constructor
-        Student(const string& name, int studentID) : name(name), studentID(studentID) {}
+        Student(string name, int studentID)
+        {
+            this->name = name;
+            this->studentID = studentID;
+        }
 
         // Display Student Info
-        void display() const 
+        void display()
         {
             cout << "  Student Name: " << name << ", ID: " << studentID << endl;
         }
@@ -31,31 +35,33 @@ private:
 
 public:
     // Constructor for Group
-    Group(const string& groupName) : groupName(groupName) {}
+    Group(string groupName)
+    {
+        this->groupName = groupName;
+    }
 
     // Add a student to the group
-    void addStudent(const string& name, int studentID) 
+    void addStudent(string name, int studentID)
     {
-        students.emplace_back(name, studentID); // Add a new student to the list
+        students.push_back(Student(name, studentID)); // Add a new student to the list
     }
 
     // Display group details
-    void display() const 
+    void display()
     {
         cout << "Group Name: " << groupName << endl;
-        if (students.empty()) 
-        {
+
+        if (students.size() == 0)
             cout << "  No students in this group." << endl;
-        }
-        else 
+        else
         {
-            for (const auto& student : students) 
-                student.display();
+            for (int i = 0; i < students.size(); i++)
+                students[i].display();
         }
     }
 };
 
-int main() 
+int main()
 {
     // Create groups
     Group group1("Engineering");

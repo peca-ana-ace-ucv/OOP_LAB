@@ -10,26 +10,24 @@ private:
 
 public:
     // Constructor
-    Complex(double r = 0, double i = 0) : real(r), imag(i) {}
+    Complex(double r = 0, double i = 0)
+    {
+        real = r;
+        imag = i;
+    }
 
-    // Overload the ~ operator for magnitude
+    // Overload the ~ operator for magnitude (absolute value)
     double operator~()
     {
         return sqrt(real * real + imag * imag);
     }
 
-    // Overload the ^ operator for power
+    // Overload the ^ operator for power (default to power 2)
     Complex operator^(int power)
     {
-        if (power == 0)
-            return Complex(1, 0); // Any number to the power of 0 is 1
-
-        Complex result = *this;
-
-        for (int i = 1; i < power; ++i)
-            result = result * (*this);
-
-        return result;
+        double magnitude = pow(~(*this), power);
+        double angle = atan2(imag, real) * power; // Polar coordinates
+        return Complex(magnitude * cos(angle), magnitude * sin(angle));
     }
 
     // Overload the + operator for addition
@@ -38,20 +36,10 @@ public:
         return Complex(real + other.real, imag + other.imag);
     }
 
-    // Overload the * operator for multiplication (used in ^ operator)
-    Complex operator*(Complex& other)
-    {
-        return Complex(real * other.real - imag * other.imag,
-            real * other.imag + imag * other.real);
-    }
-
     // Display function
     void display()
     {
-        if (imag >= 0)
-            cout << real << " + " << imag << "i";
-        else
-            cout << real << " - " << -imag << "i";
+        cout << real << (imag >= 0 ? " + " : " - ") << fabs(imag) << "i";
     }
 };
 

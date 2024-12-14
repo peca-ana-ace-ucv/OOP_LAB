@@ -6,34 +6,33 @@ using namespace std;
 
 // Template class to manage a list of elements
 template <typename T>
-
-class ListManager 
+class ListManager
 {
 private:
     vector<T> elements; // List of elements
 
 public:
     // Add element to the list
-    void addElement(const T& element) 
+    void addElement(T element)
     {
         elements.push_back(element);
     }
 
     // Return index of an element based on the key
-    int findElementByKey(const typename T::KeyType& key) 
+    int findElementByKey(int key)
     {
-        for (size_t i = 0; i < elements.size(); ++i) 
+        for (int i = 0; i < elements.size(); ++i)
         {
-            if (elements[i].getKey() == key) 
+            if (elements[i].getKey() == key)
                 return i; // Return the index if found
         }
         return -1; // Return -1 if not found
     }
 
     // Remove element from the list based on index
-    void removeElementByIndex(int index) 
+    void removeElementByIndex(int index)
     {
-        if (index < 0 || index >= static_cast<int>(elements.size())) 
+        if (index < 0 || index >= elements.size())
         {
             cout << "Invalid index. No element removed." << endl;
             return;
@@ -43,9 +42,9 @@ public:
     }
 
     // Display all keys in the list
-    void displayKeys() 
+    void displayKeys()
     {
-        if (elements.empty()) 
+        if (elements.empty())
         {
             cout << "List is empty." << endl;
             return;
@@ -53,18 +52,18 @@ public:
 
         cout << "Keys in the list:" << endl;
 
-        for (const auto& element : elements)
-            cout << element.getKey() << " ";
-        
+        for (int i = 0; i < elements.size(); ++i)
+            cout << elements[i].getKey() << " ";
+
         cout << endl;
     }
 
     // Sort the list in ascending or descending order based on the key
-    void sortList(bool ascending = true) 
+    void sortList(bool ascending = true)
     {
-        sort(elements.begin(), elements.end(), [ascending](const T& a, const T& b) 
+        sort(elements.begin(), elements.end(), [ascending](T a, T b)
             {
-            return ascending ? a.getKey() < b.getKey() : a.getKey() > b.getKey();
+                return ascending ? a.getKey() < b.getKey() : a.getKey() > b.getKey();
             });
 
         cout << "List sorted in " << (ascending ? "ascending" : "descending") << " order based on key." << endl;
@@ -72,33 +71,27 @@ public:
 };
 
 // Example class to demonstrate the functionality
-class Element 
+class Element
 {
-public:
-    using KeyType = int; // Define the key type for the class
-
 private:
     int key;      // Key attribute
     string name;  // Some additional data
 
 public:
     // Constructor
-    Element(int key, string name) : key(key), name(name) {}
+    Element(int k, string n) : key(k), name(n) {}
 
     // Getter for the key
-    int getKey() const { return key; }
-
-    // Getter for the name
-    string getName() const { return name; }
+    int getKey() { return key; }
 
     // Display element info
-    void display() const 
+    void display()
     {
         cout << "Key: " << key << ", Name: " << name << endl;
     }
 };
 
-int main() 
+int main()
 {
     // Create a ListManager for elements of type Element
     ListManager<Element> manager;

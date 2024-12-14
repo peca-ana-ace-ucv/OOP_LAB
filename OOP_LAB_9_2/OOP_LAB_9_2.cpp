@@ -1,6 +1,5 @@
 ﻿#include <iostream>
 #include <vector>
-#include <cmath>  // For power function
 
 using namespace std;
 
@@ -9,35 +8,34 @@ using namespace std;
 #endif
 
 // Abstract Shape class
-class Shape 
+class Shape
 {
 public:
     virtual double area() = 0;  // Pure virtual function to compute area
     virtual void draw() = 0;    // Pure virtual function to draw the shape
-    virtual ~Shape() {}          // Virtual destructor to clean up derived classes
 };
 
 // Circle class derived from Shape
-class Circle : public Shape 
+class Circle : public Shape
 {
 private:
     double radius;
 public:
     Circle(double r) : radius(r) {}
 
-    double area() override 
+    double area() override
     {
         return M_PI * radius * radius; // Area of the circle: πr^2
     }
 
-    void draw() override 
+    void draw() override
     {
         cout << "Drawing a Circle" << endl;
     }
 };
 
 // Triangle class derived from Shape
-class Triangle : public Shape 
+class Triangle : public Shape
 {
 private:
     double base;
@@ -45,37 +43,37 @@ private:
 public:
     Triangle(double b, double h) : base(b), height(h) {}
 
-    double area() override 
+    double area() override
     {
         return 0.5 * base * height; // Area of the triangle: 1/2 * base * height
     }
 
-    void draw() override 
+    void draw() override
     {
         cout << "Drawing a Triangle" << endl;
     }
 };
 
 // Square class derived from Shape
-class Square : public Shape 
+class Square : public Shape
 {
 private:
     double side;
 public:
     Square(double s) : side(s) {}
 
-    double area() override 
+    double area() override
     {
         return side * side; // Area of the square: side^2
     }
 
-    void draw() override 
+    void draw() override
     {
         cout << "Drawing a Square" << endl;
     }
 };
 
-int main() 
+int main()
 {
     // Vector to store pointers to Shape objects
     vector<Shape*> shapes;
@@ -88,15 +86,15 @@ int main()
     // Compute the sum of areas
     double totalArea = 0;
 
-    for (auto shape : shapes)
-        totalArea += shape->area();  // Add area of each shape to the total area
+    for (int i = 0; i < shapes.size(); ++i)
+        totalArea += shapes[i]->area();  // Add area of each shape to the total area
 
     // Output the total area
     cout << "Total area of all shapes: " << totalArea << endl;
 
     // Clean up dynamically allocated memory
-    for (auto shape : shapes)
-        delete shape;
+    for (int i = 0; i < shapes.size(); ++i)
+        delete shapes[i];
 
     return 0;
 }

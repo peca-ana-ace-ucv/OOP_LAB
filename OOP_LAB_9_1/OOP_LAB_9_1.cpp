@@ -4,52 +4,49 @@
 
 using namespace std;
 
-// Abstract class Vehicle
-class Vehicle 
+// Base class Vehicle
+class Vehicle
 {
 protected:
     string name; // Name of the vehicle
 
 public:
     // Constructor
-    Vehicle(string name) : name(name) {}
+    Vehicle(string n) : name(n) {}
 
     // Pure virtual method to start the vehicle
     virtual void start() = 0;
-
-    // Virtual destructor to clean up derived objects properly
-    virtual ~Vehicle() {}
 };
 
 // Class Rocket derived from Vehicle
-class Rocket : public Vehicle 
+class Rocket : public Vehicle
 {
 public:
     // Constructor
-    Rocket(string name) : Vehicle(name) {}
+    Rocket(string n) : Vehicle(n) {}
 
     // Override start method
-    void start() override 
+    void start() override
     {
         cout << "Starting rocket: " << name << endl;
     }
 };
 
 // Class Car derived from Vehicle
-class Car : public Vehicle 
+class Car : public Vehicle
 {
 public:
     // Constructor
-    Car(string name) : Vehicle(name) {}
+    Car(string n) : Vehicle(n) {}
 
     // Override start method
-    void start() override 
+    void start() override
     {
         cout << "Starting car: " << name << endl;
     }
 };
 
-int main() 
+int main()
 {
     // Vector of Vehicle pointers
     vector<Vehicle*> vehicles;
@@ -60,12 +57,12 @@ int main()
     vehicles.push_back(new Rocket("NASA Rocket"));
 
     // Starting all vehicles
-    for (auto vehicle : vehicles)
-        vehicle->start();
+    for (int i = 0; i < vehicles.size(); ++i)
+        vehicles[i]->start();
 
-    // Clean up to prevent memory leaks
-    for (auto vehicle : vehicles)
-        delete vehicle;
+    // Clean up allocated memory
+    for (int i = 0; i < vehicles.size(); ++i)
+        delete vehicles[i];
 
     return 0;
 }

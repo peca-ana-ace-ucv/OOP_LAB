@@ -3,8 +3,7 @@
 
 using namespace std;
 
-// Class for ComplexNumber
-class ComplexNumber 
+class ComplexNumber
 {
 private:
     float real;
@@ -12,31 +11,31 @@ private:
 
 public:
     // Constructor
-    ComplexNumber(float real = 0.0, float imag = 0.0) : real(real), imag(imag) {}
-
-    // Getter methods for real and imaginary parts
-    float getReal() { return real; }
-    float getImag() { return imag; }
+    ComplexNumber(float real = 0.0, float imag = 0.0)
+    {
+        this->real = real;
+        this->imag = imag;
+    }
 
     // Method to compute the magnitude of the complex number
-    float magnitude() 
+    float magnitude()
     {
         return sqrt(real * real + imag * imag);
     }
 
     // Overloading the comparison operators
-    bool operator<(ComplexNumber& other) 
+    bool operator<(ComplexNumber other)
     {
         return this->magnitude() < other.magnitude();
     }
 
-    bool operator>(ComplexNumber& other) 
+    bool operator>(ComplexNumber other)
     {
         return this->magnitude() > other.magnitude();
     }
 
     // Overload << for printing
-    friend ostream& operator<<(ostream& os, ComplexNumber& c) 
+    friend ostream& operator<<(ostream& os, ComplexNumber c)
     {
         os << c.real << " + " << c.imag << "i";
         return os;
@@ -45,12 +44,12 @@ public:
 
 // Template function to compare two values of the same type
 template <typename T>
-bool compareValues(T& value1, T& value2) 
+bool compareValues(T value1, T value2)
 {
     return value1 > value2; // Uses the overloaded > operator
 }
 
-int main() 
+int main()
 {
     // Comparing float numbers
     float num1 = 3.5;

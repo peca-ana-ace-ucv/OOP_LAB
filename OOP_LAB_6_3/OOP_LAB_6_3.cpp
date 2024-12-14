@@ -3,26 +3,33 @@
 
 using namespace std;
 
-class Complex 
+class Complex
 {
 private:
     double real, imag; // Real and imaginary parts
 
 public:
     // Constructor
-    Complex(double r = 0, double i = 0) : real(r), imag(i) {}
+    Complex(double r = 0, double i = 0)
+    {
+        real = r;
+        imag = i;
+    }
 
     // Function to calculate the magnitude (module) of the complex number
-    double magnitude() 
+    double magnitude()
     {
         return sqrt(real * real + imag * imag);
     }
 
-    // Overload the < operator as a friend function
-    friend bool operator<(Complex& c1, Complex& c2);
+    // Overload < operator for comparison by module
+    bool operator<(Complex other)
+    {
+        return this->magnitude() < other.magnitude();
+    }
 
     // Display function
-    void display() 
+    void display()
     {
         if (imag >= 0)
             cout << real << " + " << imag << "i";
@@ -31,13 +38,7 @@ public:
     }
 };
 
-// Define the < operator
-bool operator<(Complex& c1, Complex& c2) 
-{
-    return c1.magnitude() < c2.magnitude();
-}
-
-int main() 
+int main()
 {
     Complex c1(3, 4); // Magnitude = 5
     Complex c2(1, 7); // Magnitude = sqrt(50) ~ 7.07
@@ -45,9 +46,7 @@ int main()
     // Compare complex numbers by their module
     cout << "Comparing two complex numbers by their module:\n";
     cout << "c1 = ";
-
     c1.display();
-
     cout << "\nc2 = ";
     c2.display();
 

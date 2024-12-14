@@ -4,8 +4,7 @@
 
 using namespace std;
 
-// Class for Person
-class Person 
+class Person
 {
 private:
     string name;
@@ -13,20 +12,26 @@ private:
 
 public:
     // Constructor
-    Person(string name, int age) : name(name), age(age) {}
+    Person(string name, int age)
+    {
+        this->name = name;
+        this->age = age;
+    }
 
     // Getter for age
-    int getAge() { return age; }
+    int getAge()
+    {
+        return age;
+    }
 
     // Display person info
-    void display() 
+    void display()
     {
         cout << "Name: " << name << ", Age: " << age << endl;
     }
 };
 
-// Class for Car
-class Car 
+class Car
 {
 private:
     string model;
@@ -34,56 +39,57 @@ private:
 
 public:
     // Constructor
-    Car(string model, int yearsOld) : model(model), yearsOld(yearsOld) {}
+    Car(string model, int yearsOld)
+    {
+        this->model = model;
+        this->yearsOld = yearsOld;
+    }
 
     // Getter for age (years old)
-    int getAge() { return yearsOld; }
+    int getAge()
+    {
+        return yearsOld;
+    }
 
     // Display car info
-    void display() 
+    void display()
     {
         cout << "Model: " << model << ", Years Old: " << yearsOld << endl;
     }
 };
 
-// Template class to compute average age
 template <typename T>
-class AverageCalculator 
+class AverageCalculator
 {
 public:
     // Method to compute the average age
-    static double computeAverageAge(vector<T>& list) 
+    static double computeAverageAge(vector<T>& list)
     {
-        if (list.empty()) 
-        {
+        if (list.empty())
             return 0.0;
-        }
 
         int totalAge = 0;
-        for (T& item : list) 
-            totalAge += item.getAge(); // Calls the getAge() method
 
-        return static_cast<double>(totalAge) / list.size();
+        for (T& item : list)
+            totalAge += item.getAge();
+
+        return (double)totalAge / list.size();
     }
 };
 
-int main() 
+int main()
 {
     // List of Persons
-    vector<Person> persons = 
-    {
+    vector<Person> persons = {
         Person("Rodica", 30),
         Person("Bobby", 25),
-        Person("Carlos", 35)
-    };
+        Person("Carlos", 35) };
 
     // List of Cars
-    vector<Car> cars = 
-    {
+    vector<Car> cars = {
         Car("Toyota", 5),
         Car("Honda Civic", 3),
-        Car("Ford Focus", 10)
-    };
+        Car("Ford Focus", 10) };
 
     // Compute and display average age for persons
     cout << "Persons in the list:" << endl;
